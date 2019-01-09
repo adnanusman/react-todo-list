@@ -37,7 +37,7 @@ code {
 
 .todo-item {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 30px 20px 0;
   width: 70%;
