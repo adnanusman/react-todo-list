@@ -9,12 +9,24 @@ class App extends React.Component {
       todos: todosData
     }
     
+    this.handleCheckBox = this.handleCheckBox.bind(this);
+
   };
+
+  handleCheckBox(id) {
+    this.setState(prevState => {
+      prevState.todos.forEach(todo => {
+        if(todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+      })
+    })
+  }
 
   render() {
     const todoItemComponents = this.state.todos.map(todo => {
       return (
-        <TodoItem key={todo.id} todo={todo} />
+        <TodoItem key={todo.id} todo={todo} handleCheckBox={this.handleCheckBox} />
       );
     });
 
