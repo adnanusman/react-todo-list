@@ -9,7 +9,7 @@ class TodoItem extends React.Component {
           id="checkbox" 
           name="checkbox" 
           defaultChecked={this.props.todo.completed === false && 'checked'} 
-          handleCheckBox={() => this.props.handleCheckBox(this.props.todo.id)}
+          onChange={() => this.props.handleCheckBox(this.props.todo.id)}
         />
         <label htmlFor="checkbox">{this.props.todo.text}</label>
       </div>
