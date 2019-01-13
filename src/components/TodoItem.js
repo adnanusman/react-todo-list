@@ -2,6 +2,10 @@ import React from 'react';
 
 class TodoItem extends React.Component {
   render() {
+    const checkedTodo = {
+      textDecoration: 'line-through',
+      fontStyle: 'italic'
+    }
     return (
       <div className="todo-item">
         <input 
@@ -11,7 +15,10 @@ class TodoItem extends React.Component {
           defaultChecked={this.props.todo.completed && 'checked'} 
           onChange={() => this.props.handleCheckBox(this.props.todo.id)}
         />
-        <label htmlFor="checkbox">{this.props.todo.text}</label>
+        <label 
+          htmlFor="checkbox"
+          style={this.props.todo.completed ? checkedTodo : null}
+        >{this.props.todo.text}</label>
       </div>
     )
   }
